@@ -2,8 +2,6 @@ from webob import Request, Response
 from pprint import pprint
 import fileiter
 import uuid
-import hashlib
-import os
 
 class Application(object):
 
@@ -16,8 +14,7 @@ class Application(object):
        return self.handle_request(req)(env, start_response)
     def createUUID(self):
         return uuid.uuid1()
-    def getCheckSum(self, chunk):
-        return hashlib.sha1(chunk).hexdigest()
+
     def uploadData(self, req, ud):
             print 'the uuid is %s'%ud
             CHUNKSIZE = 1024000
@@ -26,25 +23,18 @@ class Application(object):
             print fname
             #time.sleep(5)
             f = open(fname, "w")
-            #chunk = req.environ["wsgi.input"].read(CHUNKSIZE)
+            chunk = req.environ["wsgi.input"].read(CHUNKSIZE)
             # ----------  write files ----------------
             print 'bbbb'
             #print chunk
-            count=0
-            chunk='init'
+            count=1
             while chunk:
-                chunk = req.environ["wsgi.input"].read(CHUNKSIZE)
-                if len(chunk)==0:
-                    break;
-                print '--------------------'
-                checksum = self.getCheckSum(chunk)
-                print 'checksum %s'%checksum
-                print 'length %d'%len(chunk)
                 f.write(chunk)
+                chunk = req.environ["wsgi.input"].read(CHUNKSIZE)
                 #print chunk
+                print '--------------------'
                 count=count+1
                 print count
-            
             f.close()
             resp = Response(request=req)
             resp.body = 'save over'

@@ -1,0 +1,10 @@
+import fileiter
+
+listfile=['aa.txt','bb.txt','cc.txt']
+x = iter(fileiter.FileIterable(listfile))
+f = open('sum.txt','w')
+for i in x:
+    #print i
+    f.write(i)
+
+f.close()
