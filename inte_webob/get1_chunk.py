@@ -12,8 +12,8 @@ print response.status, response.reason
 
 #print data
 #conn.close()
-f = open('./download1.jpg',"wb")
-chunksize = 4096000
+f = open('./ch_download1.jpg',"wb")
+chunksize = 4096
 data = response.read(chunksize)
 while data:
     f.write(data)

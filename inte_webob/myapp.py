@@ -49,7 +49,7 @@ class Application(object):
                 #print chunk
                 count=count+1
                 print count
-            
+            ret = self.conn.commit()
             #f.close()
             resp = Response(request=req)
             resp.body = 'save over'
@@ -64,13 +64,17 @@ class Application(object):
             #data = open('./save.jpg', 'r')
             #resp = Response(app_iter = data, request=req)
             resp = Response(request=req)
-            chunksize=4096000
-            resp.app_iter = fileiter.FileIterable('./random.txt',chunksize)
+            chunksize=1024000
+            uid='aaa'
+            chunkList = self.conn.readMeta(uid)
+            print ' --------- snow chunk list --------'
+            print chunkList
+            resp.app_iter = fileiter.FileIterable(chunkList)
             #resp.app_iter = fileiter.FileIterable('./random.txt')
             #resp.app_iter=data
             #resp = Response(request=req)
-	    pprint(req.environ)
-	    print req.body
+            #pprint(req.environ)
+            #print req.body
             return resp
         if (req.method == 'POST'):
                 ud = self.createUUID()

@@ -17,8 +17,8 @@ conn.endheaders()
 #fp = '/root/random.zip'
 #fp = './zero.txt'
 #fp = './ddd.jpg'
-fp = './size.txt'
-#fp='./random.txt'
+#fp = './size.txt'
+fp='./random.txt'
 # fp = 'C:\Users\haow\Downloads\MONACO.TTF'
 f = os.path.basename(fp)
 print f
