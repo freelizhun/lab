@@ -22,13 +22,12 @@ class Application(object):
         return hashlib.sha1(chunk).hexdigest()
     def uploadData(self, req, ud):
             print 'the uuid is %s'%ud
-            ud='aaa'
             CHUNKSIZE = 1024000
             filename = req.environ.get('QUERY_STRING')
             fname=filename.split('=')[1]
             print fname
             #time.sleep(5)
-            #f = open(fname, "w")
+            f = open(fname, "w")
             #chunk = req.environ["wsgi.input"].read(CHUNKSIZE)
             # ----------  write files ----------------
             print 'bbbb'
@@ -41,16 +40,14 @@ class Application(object):
                     break;
                 print '--------------------'
                 checksum = self.getCheckSum(chunk)
-
                 print 'checksum %s'%checksum
                 print 'length %d'%len(chunk)
-                ret = self.conn.writeData(ud, chunk, checksum)
-                #f.write(chunk)
+                f.write(chunk)
                 #print chunk
                 count=count+1
                 print count
             
-            #f.close()
+            f.close()
             resp = Response(request=req)
             resp.body = 'save over'
             pprint(req.environ)
