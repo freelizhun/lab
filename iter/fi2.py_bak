@@ -1,0 +1,64 @@
+
+global headersize
+global returnlen
+global seg
+headersize =5
+returnlen = 6
+seg = 100
+
+def getdata(a):
+    r='a'
+    count = 0
+    maxdata = len(a)
+    while count!=-1:
+        init = count * 10
+        fin = (count+1)* 10
+        if fin>= maxdata:
+            fin = maxdata 
+        r = a[init: fin]
+        yield r
+        count = count + 1
+        if fin == maxdata:
+            break
+def getheader(rawdata, counter):
+    init = counter
+    fin = counter + headersize
+    return fin, int(rawdata[init:fin])
+def getdata(rawdata, counter, size):
+    init = counter
+    fin = counter + size
+    return fin, rawdata[init:fin]
+    
+
+def it(a):
+    global headersize
+    global seg
+    global returnlen
+    chunkdata = ''
+    data = ''
+    counter = 0
+    while(True):
+        (counter, header) = getheader(a,counter)
+        print counter, header
+        (counter, data) = getdata(a, counter, header)
+        chunkdata = chunkdata + data
+        print counter, data
+        if len(chunkdata) >= returnlen:
+            yield chunkdata[0:returnlen]
+            chunkdata = chunkdata[returnlen:]
+        
+def setupa():
+    a = ''
+    for i in range (1,seg+1):
+        content = 'a'*i
+        a= a + str(i).zfill(headersize)+ content
+    return a
+a= setupa()
+print a
+#return fixsize
+for i in it(a):
+    print 'return data', i
+#for i in it(a):
+
+
+
