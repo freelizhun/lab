@@ -1,29 +1,27 @@
+from fileop.Error import MyError
+
 class FileIterable(object):
-    def __init__(self, listfile, count=0, size=1024000):
+    def __init__(self, listfile, count=0, size=4096):
        print '---into fileiter----'
        self.count = count
        self.chunk_size = size
        self.listfile = listfile
-       print 'intit 1'
        #print self.count
     def __iter__(self):
-       print 'iter 1'
        return FileIterator(self.listfile, self.count, self.chunk_size)
 class FileIterator(object):
     #chunk_size = 4096
     def __init__(self, listfile, count, chunk_size):
-        print '----init 2r----'
+        print '----into tor----'
         self.count = count
         self.chunk_size = chunk_size
         self.listfile = listfile
         self.fileobj = open(self.listfile[self.count], 'rb')
     def __iter__(self):
-        print '----inter 2r----'
         return self
     def next(self):
-        print '----next----'
+        #print 'next---'
         chunk = self.fileobj.read(self.chunk_size)
-        #chunk=None
         #print chunk
         #print self.count
         if self.count >= len(self.listfile):

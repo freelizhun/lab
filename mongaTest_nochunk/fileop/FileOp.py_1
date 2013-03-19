@@ -4,7 +4,9 @@ import fileiter
 import uuid
 import hashlib
 import os
+import json
 from Connector.connector import Connector
+import fileop.dropBoxResponse as getRespBody
 
 class FileOp(object):
 
@@ -55,20 +57,22 @@ class FileOp(object):
                     ret = self.conn.writeData(ud, fname, chunk, checksum)
                     #f.write(chunk)
                     #print chunk
-                    count=count+1
+                    count=count+len(chunk)
                     print count
                 except:
                     print '---------connection break----------'
                     resp = Response(request=req)
                     resp.body = 'connection break'
                     return resp
-                    
+            #size=str(count)
+            respbody = getRespBody.upload(str(count), req)
+        
             ret = self.conn.commit()
             #f.close()
             resp = Response(request=req)
-            resp.body = 'save over'
-            pprint(req.environ)
-            print req.body
+            resp.body = json.dumps(respbody)
+            resp.headers['Content-Type']='application/json'
+            #print req.body
             return resp
     def _downloadData(self, req):
         if (req.method == 'GET'):
@@ -83,9 +87,7 @@ class FileOp(object):
             chunkList = self.conn.readMeta(fp)
             print ' --------- snow chunk list --------'
             print chunkList
-            print 'into app_iter'
             resp.app_iter = fileiter.FileIterable(chunkList)
-            print 'left app_iter'
             #resp.app_iter = fileiter.FileIterable('./random.txt')
             #resp.app_iter=data
             #resp = Response(request=req)

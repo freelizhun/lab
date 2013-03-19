@@ -40,15 +40,29 @@ class FileOp(object):
             # ----------  write files ----------------
             print 'bbbb'
             #print chunk
+            print req.environ
             count=0
+            rawcount = 0
             chunk='init'
-            while chunk:
+            datasize = int(req.environ.get('CONTENT_LENGTH'))
+            #while rawcount < datasize:
+            #while chunk or rawcount < datasize:
+            network_chunk_size =  1024000
+            reader = req.environ['wsgi.input'].read
+            for chunk in iter(lambda: reader(network_chunk_size), ''):
+                checksum = self.getCheckSum(chunk)
+                rawcount = rawcount + len(chunk)
+                print rawcount
+                ret = self.conn.writeData(ud, fname, chunk, checksum)
+            """
+            while chunk :
                 try:
+                    print 'read chunk'
                     chunk = req.environ["wsgi.input"].read(CHUNKSIZE)
-                    if len(chunk)==0:
-                        break;
                     print '--------------------'
                     checksum = self.getCheckSum(chunk)
+                    rawcount = rawcount + len(chunk)
+                    print rawcount
 
                     print 'checksum %s'%checksum
                     print 'length %d'%len(chunk)
@@ -62,13 +76,17 @@ class FileOp(object):
                     resp = Response(request=req)
                     resp.body = 'connection break'
                     return resp
+            """
+            print 'total size:',rawcount
                     
             ret = self.conn.commit()
+            print 'commit over'
             #f.close()
-            resp = Response(request=req)
+            #resp = Response(request=req)
+            resp = Response('200 OK')
             resp.body = 'save over'
-            pprint(req.environ)
-            print req.body
+            #pprint(req.environ)
+            #print req.body
             return resp
     def _downloadData(self, req):
         if (req.method == 'GET'):

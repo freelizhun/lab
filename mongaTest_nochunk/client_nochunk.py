@@ -2,8 +2,11 @@ import httplib
 import sys
 import mimetypes
 import os
+import commands
+import time
 #CHUNKSIZE = 65563  
 CHUNKSIZE = 4096
+fp='/root/small.txt'
 #CHUNKSIZE = 6
 url="http://127.0.0.1:8090/"
 conn = httplib.HTTPConnection("127.0.0.1", 8090)
@@ -12,7 +15,11 @@ conn = httplib.HTTPConnection("127.0.0.1", 8090)
 conn.putrequest("PUT", "/test")
 #conn.putheader("Content-Type", "application/zip")
 conn.putheader("Content-Type", "application/json")
-conn.putheader("Transfer-Encoding", "chunked")
+fsize =int( commands.getoutput('ls -al %s'%fp).split()[4]) -1024000
+conn.putheader("Content-Length", str(fsize))
+
+#conn.putheader("Content-Length", "3000000")
+#conn.putheader("Transfer-Encoding", "chunked")
 conn.putheader("Filepath","/tmp/huge/h.txt")
 conn.endheaders()
  
@@ -20,7 +27,6 @@ conn.endheaders()
 #fp = './zero.txt'
 #fp = './ddd.jpg'
 #fp = './size.txt'
-fp='/root/small.txt'
 #fp='./random.txt'
 # fp = 'C:\Users\haow\Downloads\MONACO.TTF'
 f = os.path.basename(fp)
@@ -33,6 +39,8 @@ with open(f, 'r') as fp:
      while chunk:
          conn.send('%x\r\n%s\r\n' % (len(chunk), chunk))
          chunk = fp.read(CHUNKSIZE)
+         #time.sleep(1)
      conn.send('0\r\n\r\n')
+print 'send over'
 response = conn.getresponse()
 print response.read()

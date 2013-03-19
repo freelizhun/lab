@@ -18,7 +18,6 @@ class Connector:
         path='%s/%s'%(path, checksum)
         f = open(path, "w")
         f.write(data)
-        print 'write data %s'%len(data)
         f.close()
         return 'ok'
     def readMeta(self, uid):
