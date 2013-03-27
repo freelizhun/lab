@@ -1,2 +1,0 @@
-sfdasd
-lab_1
