@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from re import sub
 import time
+import hashlib
 # AES is a block cipher so you need to define size of block.
 # Valid options are 16, 24, and 32
 BLOCK_SIZE = 32
@@ -43,8 +44,11 @@ def StripPadding(data, interrupt, pad):
 # Based on comments from lighthill,
 # you should use os.urandom() or Crypto.Random to generate random secret key
 # I also use the GRC Ultra High Security Password Generator to generate a secret key
-SECRET_KEY = u'a1b2c3d4e5f6g7h8a1b2c3d4e5f6g7h8'
-SECRET_KEY = u'4235227b51436ad86d07c7cf5d69bda2644984de'
+#SECRET_KEY = u'a1b2c3d4e5f6g7h8a1b2c3d4e5f6g7h8'
+#SECRET_KEY = u'4235227b51436ad86d07c7cf5d69bda2644984de'
+message='test'
+filename= hashlib.sha256(message).hexdigest()
+SECRET_KEY=filename[0:32]
 
 # Initialization Vector (IV) should also always be provided
 # With the same key but different IV, the same data is encrypted differently
