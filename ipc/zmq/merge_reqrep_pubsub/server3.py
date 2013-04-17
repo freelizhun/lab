@@ -8,6 +8,6 @@ s.connect('tcp://127.0.0.1:5000')
     
 while True:
     msg = s.recv()
-    print 'Got server2',msg
+    print 'Got server3',msg
     s.send(msg)
     time.sleep(2)
