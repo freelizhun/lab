@@ -1,0 +1,736 @@
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<script src="scripts/swfobject_modified.js" type="text/javascript"></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>全國加油站</title>
+<meta name="keywords" Content="全國加油站">
+<meta name="description" Content="全國加油站">
+<link href="../../css/type.css" rel="stylesheet" type="text/css">
+<script src="../../js/AC_RunActiveContent.js" type="text/javascript"></script>
+<script src="../../js/buttom.js" type="text/JavaScript"></script>
+<script src="../../scripts/swfobject_modified.js" type="text/javascript"></script>
+</head>
+<body>
+<form name="form1" method="post" action="index2.aspx?service=1" id="form1" class="form">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/ScriptResource.axd?d=xsLAvlqtOv7gRkdHhgIns0DG-9GYnEOKm-TpSC-Hk_f_wLO7Z8iv5iwahTDGmFo_9aaNmHVMd1i31Kr3d2e99_w-4gbo1hWBT4mjDJ8pYxQQY-33SzULY1kb0Xx22alFOnQmvQ2&amp;t=634904703809922387" type="text/javascript"></script>
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWHgKZirDkDAK3tuf7BQLirtsHAuC5wvAPAu/j9roJAuCM3NQFAuGM3NQFAuKM3NQFAuOM3NQFAu/j4l8C4pzG1w4C7fPsuQIC7PPsuQIC7/PsuQIC7vPsuQIC6fPsuQIC6PPsuQIC6/PsuQIC+vPsuQIC9fPsuQIC66uOsAECq76l0AYCqr6l0AYCqb6l0AYCqL6l0AYCr76l0AYCrr6l0AYCrb6l0AYCvL6l0AYCs76l0AZ9AK3kPFmFQdW95kkmvp1xA9zXsQ==" />
+ 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td background="../../images/locations/left_3.jpg" class="bg03_righttop">&nbsp;</td>
+    <td width="990"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <!--logo、會員登入、選單區-->
+      <tr>
+        <td background="../../swf/logo-bg.jpg" class="bg01_lefttop">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="990" height="71" id="top" align="middle">
+    	    <param name="movie" value="../../swf/logo.swf" />
+            <param name="flashVars" value="loc=1" />
+    	    <param name="quality" value="high" />
+    	    <param name="bgcolor" value="#ffffff" />
+    	    <param name="play" value="true" />
+    	    <param name="loop" value="true" />
+    	    <param name="wmode" value="transparent" />
+    	    <param name="scale" value="showall" />
+    	    <param name="menu" value="true" />
+    	    <param name="devicefont" value="false" />
+    	    <param name="salign" value="" />
+    	    <param name="allowScriptAccess" value="sameDomain" />
+    	    <!--[if !IE]>-->
+    	    <object type="application/x-shockwave-flash" data="../../swf/logo.swf" width="990" height="71">
+    	      <param name="movie" value="../../swf/logo.swf" />
+              <param name="flashVars" value="loc=1" />
+    	      <param name="quality" value="high" />
+    	      <param name="bgcolor" value="#ffffff" />
+    	      <param name="play" value="true" />
+    	      <param name="loop" value="true" />
+    	      <param name="wmode" value="transparent" />
+    	      <param name="scale" value="showall" />
+    	      <param name="menu" value="true" />
+    	      <param name="devicefont" value="false" />
+    	      <param name="salign" value="" />
+    	      <param name="allowScriptAccess" value="sameDomain" />
+    	      <!--<![endif]-->
+    	      <img src="../../swf/logo-bg.jpg" width="990" height="71" border="0" usemap="#Map2" />
+              <map name="Map2" id="Map2">
+				<area shape="rect" coords="5,7,280,65" href="../../index.aspx" />
+			</map>
+    	      <!--[if !IE]>-->
+  	      </object>
+    	    <!--<![endif]-->
+  	    </object>
+        </td>
+      </tr>
+      <tr>
+        <td height="36" bgcolor="#f0f0f0"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="40%"><img src="../../images/all/golife.jpg" alt="GO!LIFE加油!朝著美好的生活前進" width="333" height="36"></td>
+            <td width="60%" align="right" style="padding-right:10px;">
+            
+        <div id="login_01_Panel1">
+	
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>E-mail</td>
+                <td style="padding-left:10px;"><label for="textfield"></label>
+                 <input name="login_01$u_id" type="text" id="login_01_u_id" class="inputlogin01" /></td>
+                <td style="padding-left:10px;">登入密碼</td>
+                <td style="padding-left:10px;"><label for="textfield"></label>
+                <input name="login_01$u_password" type="password" id="login_01_u_password" class="inputlogin01" /></td>
+                <td style="padding-left:10px;">
+                    <input type="submit" name="login_01$login_bt" value="登入" onclick="return mem_bar_chk();" id="login_01_login_bt" class="input01" /></td>
+                <td style="padding-left:10px;" class="link01"><a id="login_01_foreget_url" href="../member/inquiry.aspx">忘記密碼</a></td>
+                <td style="padding-left:10px;">|</td>
+                <td style="padding-left:10px;" class="link01"><a id="login_01_join_url" href="../member/join1.aspx">加入會員</a></td>
+              </tr>
+            </table>
+            <script type="text/javascript">
+                function mem_bar_chk() {
+                    var u_id = document.getElementById("login_01_u_id");
+                    var u_password = document.getElementById("login_01_u_password");
+                    if (u_id.value == "") {
+                        alert("請輸入帳號");
+                        u_id.focus();
+                        return false;
+                    } else if (u_password.value == "") {
+                        alert("請輸入密碼");
+                        u_password.focus();
+                        return false;
+                    }
+                    return true;
+                 }
+            </script>
+        
+</div>  
+    
+ 
+
+
+
+
+            </td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td background="../../images/locations/menu-bg.jpg" class="bg01_lefttop">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="990" height="50" id="menu" align="middle">
+    	    <param name="movie" value="../../swf/menu.swf" />
+            <param name="flashVars" value="loc=1" />
+    	    <param name="quality" value="high" />
+    	    <param name="bgcolor" value="#ffffff" />
+    	    <param name="play" value="true" />
+    	    <param name="loop" value="true" />
+    	    <param name="wmode" value="transparent" />
+    	    <param name="scale" value="showall" />
+    	    <param name="menu" value="true" />
+    	    <param name="devicefont" value="false" />
+    	    <param name="salign" value="" />
+    	    <param name="allowScriptAccess" value="sameDomain" />
+    	    <!--[if !IE]>-->
+    	    <object type="application/x-shockwave-flash" data="../../swf/menu.swf" width="990" height="50">
+    	      <param name="movie" value="../../swf/menu.swf" />
+              <param name="flashVars" value="loc=1" />
+    	      <param name="quality" value="high" />
+    	      <param name="bgcolor" value="#ffffff" />
+    	      <param name="play" value="true" />
+    	      <param name="loop" value="true" />
+    	      <param name="wmode" value="transparent" />
+    	      <param name="scale" value="showall" />
+    	      <param name="menu" value="true" />
+    	      <param name="devicefont" value="false" />
+    	      <param name="salign" value="" />
+    	      <param name="allowScriptAccess" value="sameDomain" />
+    	      <!--<![endif]-->
+    	       <img src="../../swf/menu-bg.png" width="990" height="50" border="0" usemap="#Map" />
+             <map name="Map" id="Map">
+             <area shape="rect" coords="874,2,955,46" href="../contact/index.aspx" />
+             <area shape="rect" coords="758,5,839,49" href="../cooperation/index.aspx" />
+             <area shape="rect" coords="637,3,718,47" href="../join/index.aspx" />
+             <area shape="rect" coords="508,3,589,47" href="../locations/index.aspx" />
+             <area shape="rect" coords="390,3,471,47" href="../qa/index.aspx" />
+             <area shape="rect" coords="151,3,232,47" href="../news/index.aspx" />
+             <area shape="rect" coords="272,3,353,47" href="../gift/index.aspx" />
+  			 <area shape="rect" coords="31,2,112,46" href="../sales/index.aspx" />
+			 </map>
+    	      <!--[if !IE]>-->
+  	      </object>
+    	    <!--<![endif]-->
+  	    </object></td>
+      </tr>
+      <!--logo、會員登入、選單區 end-->
+      <tr>
+        <td background="../../images/all/bg-line.jpg" class="bg12_ylefttop" align="center">
+          <table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>
+              <img src="../../swf/locations.jpg" alt="服務據點" width="970" height="206" /></td>
+            </tr>
+            <tr>
+              <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="22%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td background="../../images/all/title-bg4.jpg" class="bg01_lefttop" height="180" width="210" valign="top" align="left">
+                      
+                      <!--left menu-->
+                      <table width="95%" border="0" cellspacing="0" cellpadding="0" style="margin-top:70px;" align="right">
+                      <tr>
+                        <td align="right"><img src="../../images/locations/llocations.jpg" alt="LOCATIONS" width="116" height="22" /></td>
+                      </tr>
+                      </table>
+                       
+<table width="95%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                      	<td>&nbsp;</td>
+                      </tr>
+                      <!--<tr>
+                        <td align="center"><a href="../locations/index2.aspx" onMouseOver="MM_swapImage('ma1','','../../images/locations/allo.jpg',1)" onMouseOut="MM_swapImgRestore()" title="營業所一覽表"><img src="../../images/locations/all.jpg" name="ma1" width="163" height="43" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>-->
+    
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=1" onMouseOver="MM_swapImage('b1','','../../images/locations/b1o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="加油站"><img src="../../images/locations/b1.jpg" name="b1" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=2" onMouseOver="MM_swapImage('b2','','../../images/locations/b2o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="自助加油"><img src="../../images/locations/b2.jpg" name="b2" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=3" onMouseOver="MM_swapImage('b3','','../../images/locations/b3o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="便利店"><img src="../../images/locations/b3.jpg" name="b3" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=4" onMouseOver="MM_swapImage('b4','','../../images/locations/b4o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="自助吸塵"><img src="../../images/locations/b4.jpg" name="b4" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=5" onMouseOver="MM_swapImage('b5','','../../images/locations/b5o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="洗車"><img src="../../images/locations/b5.jpg" name="b5" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=6" onMouseOver="MM_swapImage('b6','','../../images/locations/b6o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="自助洗車"><img src="../../images/locations/b6.jpg" name="b6" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=7" onMouseOver="MM_swapImage('b7','','../../images/locations/b7o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="無障礙廁所"><img src="../../images/locations/b7.jpg" name="b7" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=8" onMouseOver="MM_swapImage('b8','','../../images/locations/b8o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="全彩LED戶外廣告媒體"><img src="../../images/locations/b8.jpg" name="b8" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                     <tr>
+                        <td style="padding-left:20px;">
+                        <a href="../locations/index2.aspx?service=9" onMouseOver="MM_swapImage('b9','','../../images/locations/b9o.jpg',1)" onMouseOut="MM_swapImgRestore()" title="國民旅遊卡"><img src="../../images/locations/b9.jpg" name="b9" height="33" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr>
+        
+                       <tr> 
+      <td style="padding-left:20px;"><a href="../locations/01.aspx" onMouseOver="MM_swapImage('bf1','','../../images/locations/mf1o.jpg',1)" onMouseOut="MM_swapImgRestore()" title=""><img src="../../images/locations/mf1.jpg" name="bf1" border="0"></a></td>
+</tr>
+                      <tr>
+                        <td background="../../images/all/menu-line.jpg" class=" bg30_xcenter" height="11" align="center"><img src="../../images/all/menu-line.jpg" width="2" height="2" /></td>
+                      </tr> 
+                     
+                    </table>
+                    <!--left menu end-->
+                      </td>
+                    </tr>
+                  </table>
+                   </td>
+                   <td width="1%" valign="top"><img src="../../images/all/line.jpg" width="14" height="395" /></td>
+                  <td width="78%" valign="top">
+                  <!--內文-->
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td background="../../images/locations/title-bg.jpg" height="80" width="740" valign="top" class="bg01_lefttop">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="right" style="padding-right:20px;">HOME &gt; <span style="color:#3c79b0;">服務據點</span></td>
+                        </tr>
+                        <tr>
+                          <td align="left"><img src="../../images/locations/locations.jpg" alt="服務據點" width="103" height="34" /></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td style="padding-left:15px; padding-right:10px;">
+                      <!--一則新聞-->
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:10px;">
+                        <tr>
+                          <td background="../../images/locations/title.jpg" class="bg01_lefttop" height="40" style="padding-left:130px; padding-top:5px;" valign="top">
+                          <!--服務據點 Search-->
+                           <div id="lsearch_01_Panel1">
+	
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                              <td width="22%" align="right" style="padding-right:10px;white-space: nowrap;">區域:</td>
+                                <td width="10%" align="right" style="padding-right:10px;"><label for="select2"></label>
+                                    <select name="lsearch_01$kind1" id="lsearch_01_kind1">
+		<option selected="selected" value="">請選擇</option>
+		<option value="1">北區</option>
+		<option value="2">中區</option>
+		<option value="3">南區</option>
+		<option value="4">東區</option>
+
+	</select>  
+                                  </td>
+                                <td width="10%" align="right" style="padding-right:10px;white-space: nowrap;">縣市:</td>
+                                <td width="8%" align="right" style="padding-right:10px;"><label for="select2"></label>
+                                <div id="lsearch_01_updatekind">
+		
+                                     <select name="lsearch_01$kind2" id="lsearch_01_kind2">
+			<option value="">請選擇</option>
+
+		</select> 
+                                    
+	</div>                                                                   
+                                  </td>
+                                  <td width="14%" align="right" style="padding-right:10px;white-space: nowrap;">服務項目:</td>
+                                <td width="19%" align="right" style="padding-right:10px;"><label for="select2"></label>
+                                  <select name="lsearch_01$service" id="lsearch_01_service">
+		<option value="">請選擇</option>
+		<option value="1">加油站</option>
+		<option value="2">自助加油</option>
+		<option value="3">便利店</option>
+		<option value="4">自助吸塵</option>
+		<option value="5">洗車</option>
+		<option value="6">自助洗車</option>
+		<option value="7">無障礙廁所</option>
+		<option value="8">全彩LED戶外廣告媒體</option>
+		<option value="9">國民旅遊卡</option>
+
+	</select>  
+                                  </td>
+                                <td width="17%">
+                                    <input type="submit" name="lsearch_01$search_bt" value="送出" id="lsearch_01_search_bt" class="input02" /></td>
+                              </tr>
+</table>
+
+</div>
+                            <!--服務據點 Search end-->
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        	  <tr>
+                        	    <td width="3%" valign="top" style="padding-top:3px;"><img src="../../images/all/a1.jpg" width="15" height="15" /></td>
+                        	    <td width="97%" style="font-size:15px; color:#589425; font-weight:bold;" align="left">
+                                    搜尋服務項目「加油站」結果
+                                <!--搜尋頁同此頁  搜尋營業據點「XXXX」結果--></td>
+                      	    </tr>
+                      	  </table></td>
+                        </tr>
+                         <tr>
+                              <td align="center" background="../../images/gift/o-line.jpg" class="bg10_xlefttop" height="32">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="color:#000;">
+                                  <tr>
+                                    <td width="16%" align="center" style="color:#000;">站別</td>
+                                    <td width="72%" align="center" style="color:#000;">地址</td>
+                                    <td width="12%" align="center" style="color:#000;">詳細地址</td>
+                                    </tr>
+                                </table></td>
+                              </tr>
+                         <tr>
+                          <td align="left">
+                              
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl00_store_name" href="show.aspx?num=132&amp;service=1&amp;page=1">全國港墘路站</a>
+                                       </td>
+                                        <td width="72%">台北市內湖區港墘路250號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl00_map" href="show.aspx?num=132&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl01_store_name" href="show.aspx?num=133&amp;service=1&amp;page=1">全國金馬站</a>
+                                       </td>
+                                        <td width="72%">彰化縣彰化市金馬路一段192號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl01_map" href="show.aspx?num=133&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl02_store_name" href="show.aspx?num=131&amp;service=1&amp;page=1">全國三鶯站</a>
+                                       </td>
+                                        <td width="72%">新北市鶯歌區文化路669號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl02_map" href="show.aspx?num=131&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl03_store_name" href="show.aspx?num=122&amp;service=1&amp;page=1">全國豐勢站</a>
+                                       </td>
+                                        <td width="72%">台中市豐原區豐勢路一段526號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl03_map" href="show.aspx?num=122&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl04_store_name" href="show.aspx?num=129&amp;service=1&amp;page=1">全國吉安站</a>
+                                       </td>
+                                        <td width="72%">花蓮縣吉安鄉中央路三段297號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl04_map" href="show.aspx?num=129&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl05_store_name" href="show.aspx?num=121&amp;service=1&amp;page=1">全國永康站</a>
+                                       </td>
+                                        <td width="72%">台南市永康區中正南路331號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl05_map" href="show.aspx?num=121&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl06_store_name" href="show.aspx?num=62&amp;service=1&amp;page=1">全國思源路站</a>
+                                       </td>
+                                        <td width="72%">新北市新莊區思源路68號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl06_map" href="show.aspx?num=62&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl07_store_name" href="show.aspx?num=61&amp;service=1&amp;page=1">全國淡水站</a>
+                                       </td>
+                                        <td width="72%">新北市淡水區民權路41號 </td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl07_map" href="show.aspx?num=61&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl08_store_name" href="show.aspx?num=96&amp;service=1&amp;page=1">全國大甲橋站</a>
+                                       </td>
+                                        <td width="72%">台中市大甲區中山路一段61號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl08_map" href="show.aspx?num=96&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl09_store_name" href="show.aspx?num=60&amp;service=1&amp;page=1">全國土城交流道站</a>
+                                       </td>
+                                        <td width="72%">新北市土城區中央路三段158號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl09_map" href="show.aspx?num=60&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl10_store_name" href="show.aspx?num=59&amp;service=1&amp;page=1">全國中壢站</a>
+                                       </td>
+                                        <td width="72%">桃園縣中壢市中華路二段420號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl10_map" href="show.aspx?num=59&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td style="padding:5px 0 5px 0;">
+                                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                                      <tr>
+                                       <td width="16%" style="padding-left:10px;" align="left">
+                                           <a id="Repeater1_ctl11_store_name" href="show.aspx?num=118&amp;service=1&amp;page=1">全國大順站</a>
+                                       </td>
+                                        <td width="72%">高雄市三民區大順二路856號</td>
+                                         <td width="12%" align="center">
+                                         <a id="Repeater1_ctl11_map" href="show.aspx?num=118&amp;service=1&amp;page=1"><img src="../../images/gift/bt-map.jpg" width="39" height="21" border="0" /></a></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td background="../../images/locations/line.jpg" class="bg10_xlefttop"><img src="../../images/locations/line.jpg" width="6" height="3" /></td>
+                              </tr>
+                            </table>   
+                                
+                              
+                            </td>
+                        </tr>
+                        
+                      </table>
+                      <!--一則新聞 end-->
+                      </td>
+                    </tr>
+                    <tr>
+                    	<td style="border-top:solid 1px #005bac; padding:10px 0 10px 0;" align="right">
+                        <table border="0" cellspacing="0" cellpadding="2">
+ 							<tr>
+                            	<td>
+                            	  <label for="select"></label>
+                                    <select name="gopage" id="gopage" class="inputkeyword10">
+	<option selected="selected" value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+
+</select>
+                                  </td>
+                            	<td nowrap="nowrap">PAGE 
+                                    <span id="nowpage"><b><font color="#00A7ED">1</font></b></span>
+                                /
+                                    9
+                                 ． 共
+                                 <span id="total"><b><font color="#00A7ED">106</font></b></span>
+                                 筆資料</td>
+                                <td nowrap="nowrap">｜</td>
+								<td nowrap="nowrap">
+                                <a id="HyperLink1" href="/html/locations/index2.aspx?Page=1&amp;service=1"><img src="../../images/page/L1.gif" width="55" height="15" border="0" /></a>  
+                                </td>
+                                <td nowrap="nowrap">｜</td>
+								<td nowrap="nowrap">
+                                <a id="HyperLink2" href="/html/locations/index2.aspx?Page=1&amp;service=1"><img src="../../images/page/L2.gif" width="55" height="15" border="0" /></a>  
+                                </td>
+                                <td nowrap="nowrap">｜</td>
+								<td nowrap="nowrap">
+                                <a id="HyperLink3" href="/html/locations/index2.aspx?Page=2&amp;service=1"><img src="../../images/page/R2.gif" width="55" height="15" border="0" /></a>  
+                                </td>
+                                <td nowrap="nowrap">｜</td>
+								<td nowrap="nowrap">
+                                <a id="HyperLink4" href="/html/locations/index2.aspx?Page=9&amp;service=1"><img src="../../images/page/R1.gif" width="55" height="15" border="0" /></a>  
+                                </td>
+							</tr>
+						</table>
+                        </td>
+                    </tr>
+                  </table>
+                  <!--內文 end-->
+                  </td>
+                </tr>
+              </table></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table></td>
+    <td background="../../images/locations/right_3.jpg" class="bg01_lefttop">&nbsp;</td>
+  </tr>
+   <tr>
+    <td background="../../images/all/copyright-bg.jpg"class="bg10_xlefttop">&nbsp;</td>
+    <td background="../../images/all/copyright-bg.jpg" class="bg10_xlefttop" height="67">
+    <!--copyright-->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="copy">
+      <tr>
+        <td width="10%" align="center"><img src="../../images/all/copyright-logo.jpg" alt="全國加油站" width="140" height="34"></td>
+        <td width="90%"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+            <td><a href="../about/index.aspx">關於全國</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../sales/index.aspx">促銷活動</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../oil/index.aspx">最新油價</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../member/index.aspx">會員專區</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../locations/index.aspx">服務據點</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../cooperation/index.aspx">異業結盟</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../qa/index.aspx">會員Q & A</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../gift/index.aspx">線上換禮</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../new/index.aspx">新卡專區</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../join/index.aspx">人才招募</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="http://inv.npcgas.com.tw/npc/cus/cop/Cc1c01.do" target="_blank">投資人專區</a>&nbsp;&nbsp;│&nbsp;&nbsp;<a href="../privacy/index.aspx">隱私權保護</a></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><strong>全國加油站股份有限公司</strong> 版權所有 Copyright © 2012 National Petroleum Corporation All Rights Reserved. </td>
+              </tr>
+            </table>
+            </td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <script language="JavaScript" src="../../js/clear.js"></script>
+    <!--copyright end-->
+    </td>
+    <td background="../../images/all/copyright-bg.jpg" class="bg10_xlefttop">&nbsp;</td>
+  </tr>
+</table>
+
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3482472-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
+<script language="JavaScript" src="../../js/clear.js"></script>

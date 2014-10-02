@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+from pyquery import PyQuery as pq
+import sys
+import os,codecs
+#q = pq(url='http://pd.wh.seed.net.tw/fetc/cpc/cpc0331.html')
+q = pq(url='http://www.npcgas.com.tw/html/locations/index2.aspx?service=1')
+
+q1 = pq(url='http://www.wdps.ntpc.edu.tw/index.php')
+q2 = pq(url='http://tw.yahoo.com/')
+#print(q('title').text())
+print(q('title').text())
+
+for data in q('table'):
+    #print q(data).html()
+    #for i in range(len(data)):
+    #print q(data).find('td').text()
+    print q(data).find('td').eq(2).text()
+
+
+#print(q1('title').text())
+#print(q2('title').text())
+
+
+#print(q('title').text())
+"""
+s = q('title').text()
+file = codecs.open('new.html', 'w', 'utf-8')
+file.write(s)
+file.close()
+
+a = "中文"
+print a
+"""

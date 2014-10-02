@@ -1,0 +1,8 @@
+
+[notify-server]
+user = {{ notify_server.username }}
+port = {{ notify_server.port }}
+mongo_path = {{ mongodb.location }}
+mongo_port = {{ mongodb.port }}
+auth_path = http://{{ keystone.location }}:{{ keystone.port }}/{{ keystone.version }}/auth/tokens
+auth_token = ADMIN

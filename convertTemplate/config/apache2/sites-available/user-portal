@@ -1,0 +1,13 @@
+Listen 8080
+<VirtualHost *:8080>
+	<Directory "/var/www/userportal">
+		Options Indexes FollowSymLinks
+		AllowOverride None
+		Order allow,deny
+		Allow from all
+	</Directory>
+	DocumentRoot /var/www/userportal
+	RewriteEngine On
+	RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+	RewriteRule ^/?(.*)$ %{DOCUMENT_ROOT}/index.php/$1 [QSA,L]
+</VirtualHost>

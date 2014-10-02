@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+#$1 remote
+#$2 master
+#master_server=$1
+echo 'db replication' > /tmp/db_progress
+demote_server=$1
+
+DATABASES_TO_EXCLUDE="test"
+
+EXCLUSION_LIST="'information_schema','mysql'"
+MYSQLCMD="mysql -uroot -phello -A"
+function lock_db {
+  [ -e "/tmp/mysql-db-lock-${1}" ] && rm "/tmp/mysql-db-lock-${1}"
+    mkfifo "/tmp/mysql-db-lock-${1}"
+      (
+       (
+    echo "SELECT CONCAT( 'LOCK TABLES '
+     , GROUP_CONCAT(CONCAT('\`',table_name,'\`'),' WRITE')
+          , ';'
+           ) AS \"-- Statement to lock tables\"
+             FROM information_schema.tables
+             WHERE table_schema='${1}'
+             ORDER BY table_name;
+             " | $MYSQLCMD
+     echo "\! cat '/tmp/mysql-db-lock-${1}' >/dev/null"
+           echo 'UNLOCK TABLES;'
+               ) | $MYSQLCMD -D"${1}"
+                   rm "/tmp/mysql-db-lock-${1}"
+                     ) &
+                     }
+
+function unlock_db {
+>"/tmp/mysql-db-lock-${1}"
+}
+
+for DB in `echo "${DATABASES_TO_EXCLUDE}"`
+
+do
+
+EXCLUSION_LIST="${EXCLUSION_LIST},'${DB}'"
+
+done
+
+SQLSTMT="SELECT schema_name FROM information_schema.schemata"
+
+SQLSTMT="${SQLSTMT} WHERE schema_name NOT IN (${EXCLUSION_LIST})" MYSQLDUMP_DATABASES="--databases"
+
+for DB in `mysql -uroot -phello -ANe"${SQLSTMT}"`
+
+do
+
+MYSQLDUMP_DATABASES="${MYSQLDUMP_DATABASES} ${DB}"
+#echo $MYSQLDUMP_DATABASES $DB
+echo $DB
+echo "replicate $DB" > /tmp/db_progress
+echo "drop database $DB"
+mysql -uroot -phello --host=$demote_server -e "drop database $DB"
+echo "create database $DB"
+mysql -uroot -phello --host=$demote_server -e "create database $DB"
+echo "copy $DB"
+lock_db $DB
+mysqldump -u root -phello $DB | mysql -uroot -phello --host=$demote_server -C $DB
+unlock_db $DB
+done
+
+rm /tmp/db_progress
+#MYSQLDUMP_OPTIONS="--routines --triggers -uroot -phello" 
+
+#mysqldump ${MYSQLDUMP_OPTIONS} ${MYSQLDUMP_DATABASES} > MySQLDatabases.sql
+

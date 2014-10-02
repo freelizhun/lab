@@ -1,0 +1,81 @@
+{
+	"keystone": {
+		"location": "127.0.0.1",
+		"admin_port": "35357",
+		"public_port": "5000",
+		"version": "v3",
+		"auth_version": "v3.0",
+		"token": "ADMIN",
+		"db" : {
+			"type": "mysql",
+			"name": "keystone",
+			"location": "127.0.0.1",
+			"username": "root",
+			"password": "hello"
+		},
+		"admin": {
+			"username": "admin",
+			"password": "admin",
+			"tenant_name": "admin",
+			"domain_name": "Default"
+		}
+	},
+	"mysql": {
+		"location": "127.0.0.1",
+		"username": "root",
+		"password": "hello"
+	},
+	"syslog": {
+		"name": "Rsyslog",
+		"location": "127.0.0.1",
+		"username": "root",
+		"password": "hello"
+	},
+	"notify_server": {
+		"username": "root",
+		"port": "12345"
+	},
+	"mongodb": {
+		"location": "127.0.0.1",
+		"port": "27017"
+	},
+	"fileop": {
+	    "location": "127.0.0.1",
+		"port": "7000",
+		"worker": "2",
+		"username": "root",
+		"upload_timeout": "900"
+	},
+	"amqp": {
+		"location": "127.0.0.1",
+		"port": "5672",
+		"username": "guest",
+		"password": "guest",
+		"exchange_name": "message",
+		"exchange_type": "fanout",
+		"queue_name": "text",
+		"routing_key": "example.text",
+		"server_id": "server_id"
+	},
+	"storage": {
+		"type": "local",
+		"share_path": "127.0.0.1:/nfs/shares",
+		"access_point": "/opt/monga",
+		"chunk_size": "1024000"
+	},
+	"memcache": {
+		"location": "localhost",
+		"port": "11211"
+	},
+	"adminportal": {
+		"location": "127.0.0.1",
+		"port": "8080",
+		"db" : {
+			"type": "mysql",
+			"name": "adminportal",
+			"location": "127.0.0.1",
+			"username": "root",
+			"password": "hello"
+		}
+	}
+}

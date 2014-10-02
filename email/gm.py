@@ -30,6 +30,7 @@ body = [
 
 msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
 s = SMTP_SSL('smtp.gmail.com',465)
+#s = SMTP_SSL('gmail',465)
 s.ehlo()
 print 'login'
 s.login(MAILBOX, PASSWD)

@@ -1,0 +1,32 @@
+[KeystoneDB]
+location={{ keystone.db.location }}
+port={{ keystone.db.port }}
+username={{ keystone.db.username }}
+password={{ keystone.db.password }}
+type=db
+db_type={{ keystone.db.type }}
+db_database={{ keystone.db.name }}
+db_table=
+source=
+
+[MongoDB]
+location={{ mongodb.location }}
+port={{ mongodb.port }}
+username={{ mongodb.username }}
+password={{ mongodb.password }}
+type=db
+db_type=mongodb
+db_database=
+db_table=
+source=
+
+[AdminportalDB]
+location={{ adminportal.db.location }}
+port={{ adminportal.db.port }}
+username={{ adminportal.db.username }}
+password={{ adminportal.db.password }}
+type=db
+db_type={{ adminportal.db.type }}
+db_database={{ adminportal.db.name }}
+db_table=
+source=

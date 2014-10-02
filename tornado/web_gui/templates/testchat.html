@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ static_url("css/bootstrap.min.css") }}">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+    <body> 
+
+<div>  
+    <form action='/boot' method='POST' class='form-inline'>  
+        <div class='form-group'>  
+            <label class='sr-only'>评论</label>  
+            <input type='text' name='comment' class='form-control' placeholder='请输入评论'></input>  
+        </div>  
+        <button type='submit' class='btn btn-default'>评论</button>  
+    </form>  
+</div>  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+
+    </body>
+</html>

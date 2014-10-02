@@ -1,0 +1,7 @@
+[servers]
+rmq = {{ amqp.location }}
+#testrmq = {{ amqp.location }}
+
+[services]
+rmqqueue = all,fileop
+

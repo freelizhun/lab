@@ -1,0 +1,8 @@
+
+[notify-server]
+user = root
+port = 12345
+mongo_path = localhost
+mongo_port = 27017
+auth_path = http://10.90.0.52:35357/v3/auth/tokens
+auth_token = ADMIN

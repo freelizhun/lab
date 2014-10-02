@@ -1,0 +1,95 @@
+[DEFAULT]
+log_facility = LOG_LOCAL3
+bind_port = {{ fileop.port }}
+workers = {{ fileop.worker }}
+user = {{ fileop.username }}
+mongo_path = {{ mongodb.location }}
+mongo_port = {{ mongodb.port }}
+auth_url = http://{{ keystone.location }}:{{ keystone.admin_port }}/{{ keystone.version }}/
+auth_admin_token = {{ keystone.token }}
+admin_user = {{ keystone.admin.username }}
+admin_password = {{ keystone.admin.password }}
+admin_tenant_name = {{ keystone.admin.tenant_name }}
+admin_domain_name = {{ keystone.admin.domain_name }}
+amqp_host = {{ amqp.location }}
+amqp_port = {{ amqp.port }}
+amqp_user = {{ amqp.username }}
+amqp_pwd  = {{ amqp.password }}
+amqp_exchange_name = {{ amqp.exchange_name }}
+amqp_exchange_type = {{ amqp.exchange_type }}
+amqp_queue_name = {{ amqp.queue_name }}
+amqp_routing_key = {{ amqp.routing_key }}
+amqp_server_id = {{ amqp.server_id }}
+log_level = DEBUG
+#ssl
+#cert_file = /etc/swift/monga.crt
+#key_file = /etc/swift/monga.key
+
+[filter:name_check]
+use = egg:swift#name_check
+
+[filter:proxy-logging]
+use = egg:swift#proxy_logging
+access_log_name = monga
+
+[filter:collector]
+use = egg:monga#collector
+auth_url = http://{{ keystone.location }}:{{ keystone.admin_port }}/{{ keystone.version }}/
+admin_token = {{ keystone.token }}
+
+[filter:admin_ext]
+use = egg:monga#admin_ext
+
+[filter:authtoken]
+paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory
+auth_host = {{ keystone.location }}
+auth_port = {{ keystone.admin_port }}
+auth_protocol = http
+auth_uri = http://{{ keystone.location }}:{{ keystone.public_port }}/
+admin_user = {{ keystone.admin.username }}
+admin_password = {{ keystone.admin.password }}
+admin_token = {{ keystone.token }}
+admin_tenant_name = {{ keystone.admin.tenant_name }}
+auth_version = {{ keystone.auth_version }}
+memcache_servers = {{ memcache.location }}:{{ memcache.port }}
+cache = swift.cache
+
+[pipeline:main]
+pipeline = cache proxy-logging direct_link admin_ext authtoken collector name_check monga
+#pipeline = cache authtoken monga
+
+[app:monga]
+use = egg:monga#proxy
+storage_type = {{ storage.type }}
+storage_share_path = {{ storage.share_path }}
+storage_access_point = {{ storage.access_point }}
+server_addr = http://{{ fileop.location }}:{{ fileop.port }}
+upload_timeout = {{ fileop.upload_timeout }}
+storage_chunk_size = {{ storage.chunk_size }}
+
+[filter:cache]
+use = egg:swift#memcache
+# multi-proxy config not supported
+memcache_servers = {{ memcache.location }}:{{ memcache.port }}
+set log_name = cache
+
+[filter:fake_user]
+use = egg:monga#fake_user
+
+[filter:direct_link]
+use = egg:monga#direct_link
+storage_type = {{ storage.type }}
+storage_share_path = {{ storage.share_path }}
+storage_access_point = {{ storage.access_point }}
+
+[expired-cleaner]
+
+[chunk-cleaner]
+storage_access_point = {{ storage.access_point }}
+interval = 63200
+
+[version-cleaner]
+storage_access_point = {{ storage.access_point }}
+interval = 43200
+
+[log-notifier]

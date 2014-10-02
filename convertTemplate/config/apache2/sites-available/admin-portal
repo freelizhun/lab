@@ -1,0 +1,20 @@
+Listen 8000
+<VirtualHost *:8000>
+    ServerAdmin paul.lu@tw.promise.com
+    #DocumentRoot "/home/user/src/djangoadminportal/ytDjango2/"
+    ServerName FileCruiser
+    LogLevel    debug
+    CustomLog "|/usr/bin/logger -p local0.info" combined
+    ErrorLog "|/usr/bin/logger -p local0.debug"
+    #CustomLog ${APACHE_LOG_DIR}/admin_portal.log combined
+    #ErrorLog ${APACHE_LOG_DIR}/admin_portal.err
+    #AddHandler wsgi-script .wsgi
+    WSGIScriptAlias / /var/www/djangoadminportal/adminportal/wsgi/django.wsgi
+    WSGIDaemonProcess AdminPortal user=www-data group=www-data processes=1 threads=1
+    #WSGIDaemonProcess AdminPortal
+    Alias /web/static /var/www/djangoadminportal/web/static/
+    <Directory /var/www/djangoadminportal/adminportal/wsgi>
+      Order allow,deny
+      Allow from all
+    </Directory>
+</VirtualHost>
