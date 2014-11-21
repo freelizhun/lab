@@ -3,7 +3,7 @@
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.tools import argparser
-
+import dl 
 
 # Set DEVELOPER_KEY to the API key value from the APIs & auth > Registered apps
 # tab of
@@ -45,21 +45,23 @@ def youtube_search(options, search_index):
         linkurl = BaseURL + search_result['id']['videoId']
         print linkurl
         print 'got it'
+        dl.download(linkurl)
         break;
     else:
-        print ' cannot find the video: %s '%options.q
-    """
-    print search_result['snippet']['title']
-    try:
-        print search_result["id"]["videoId"]
-        print 
-        linkurl = BaseURL + search_result['id']['videoId']
-        print linkurl
-        print '--------------------'
-    except:
-        print 'not found'
-    """
-  """
+        continue
+  print ' cannot find the video: %s '%options.q
+"""
+print search_result['snippet']['title']
+try:
+    print search_result["id"]["videoId"]
+    print 
+    linkurl = BaseURL + search_result['id']['videoId']
+    print linkurl
+    print '--------------------'
+except:
+    print 'not found'
+"""
+"""
   for search_result in search_response.get("items", []):
     if search_result["id"]["kind"] == "youtube#video":
       videos.append("%s (%s)" % (search_result["snippet"]["title"],
