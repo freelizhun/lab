@@ -10,5 +10,8 @@ class Inout(object):
         print self.haha
 
 print 'start run'
+
 a = Inout('aaa')
 a()
+#or 
+Inout()()
