@@ -1,0 +1,13 @@
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+
+if has("autocmd")
+	   autocmd BufRead *.txt set tw=78
+	      autocmd BufReadPost *
+	            \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+	            \   exe "normal g'\"" |
+	            \ endif
+      endif
