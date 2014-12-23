@@ -8,6 +8,7 @@ import (
 	"net/http"
 	//"io/ioutil"
 	"fmt"
+	"time"
 )
 
 //test method handling
@@ -53,13 +54,32 @@ func HandleJsonInput(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "aaa")
 }
 
+// to return http Error
 func HandleError(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		http.Error(w, "post only", http.StatusMethodNotAllowed)
-	}else{
-	io.WriteString(w, " got you")
+	} else {
+		io.WriteString(w, " got you")
 	}
 
+}
+
+//test the multiple connection, ok it dosen't need any patch. 
+func HandleTime(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("into time")
+	time.Sleep(time.Second * 10)
+}
+
+//curl -X PUT -d "{\"test\": \"that\",\"test1\":\"test111111\"}" -H "haha":"SASA"  http://10.90.1.39:8000/header
+//test header
+func HandleHeader(w http.ResponseWriter, r *http.Request) {
+	s := r.Header.Get("haha")
+	if len(s)>0 {
+		fmt.Println(s)
+	} else {
+		fmt.Println("filter it")
+		http.Error(w, "header without haha", http.StatusMethodNotAllowed)
+	}
 }
 
 func main() {
@@ -67,6 +87,10 @@ func main() {
 	http.HandleFunc("/json", HandleJson)
 	http.HandleFunc("/jsoninput", HandleJsonInput)
 	http.HandleFunc("/error", HandleError)
+	http.HandleFunc("/time", HandleTime)
+	http.HandleFunc("/header", HandleHeader)
+	//http.ListenAndServe(":8000", nil)
+	// for debuging
 	log.Fatal(http.ListenAndServe(":8000", nil))
 
 }
