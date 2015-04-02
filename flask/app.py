@@ -62,6 +62,20 @@ def test7(username=None):
     print username
     return 'haha'
 
+#curl -X POST http://192.168.0.110/test8/aa/bb/cc  #the path can be arbitrary long and can be obtain in request.path to get all path
+@app.route('/test8/<path:path>', methods=['POST'])
+def test8(path):
+    print 'path'
+    print request.path
+    return 'haha'
+
+@app.route('/test9', methods=['POST'])
+def test9():
+    a={'aaa':'bbb'}
+    resp = make_response(json.dumps(a), 200)
+    resp.headers['X-Something'] = 'A value'
+    return resp
+
 
 @app.errorhandler(404)
 def not_found(error):
