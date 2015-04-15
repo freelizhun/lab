@@ -1,0 +1,11 @@
+to show the data in Graphite in the hostname
+with 
+python_plugin_test
+and with monitor unit gg and tt with the name of 
+gauge-gg
+gauge-tt
+
+where the plugins/*.py is how to show the data 
+
+
+and the location is /etc/collectd
