@@ -6,6 +6,9 @@ import random
 #== Our Own Functions go here: ==#
 def configer(ObjConfiguration):
    collectd.debug('Configuring Stuff') 
+   collectd.info('collectdinfo') 
+   for node in ObjConfiguration.children:
+       collectd.info('collectshow %s %s'%(node.key, node.values[0]))
 
 def initer():
     collectd.debug('initing stuff')
