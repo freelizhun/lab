@@ -19,7 +19,12 @@ class MyController2(object):
     def getchair(self, mykey):
 	return "get chair la"
     def getbeer(self, mykey):
+	self.__test(mykey)
 	return "get beer"
+    #__ will not as a router
+    def __test(self,mykey):
+	print 'goto __test'
+	return "get __test"
 
 
 class MyApplication(object):
