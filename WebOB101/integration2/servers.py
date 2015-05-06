@@ -1,15 +1,15 @@
 from eventlet import wsgi, listen
-#import myapp.MyApplication as
-#from myapp import MyApplication
-#import myapp.MyApplication as MyApplication
 import myapp
-#import wsgi
 class Controller(object):
     def test22(self, mykey):
         print 'into the servers controller'
-        #print("step 4: MyController's getlist(self, mykey) is invoked")
         return "get new controller"
+    def test11(self, mykey):
+        print 'into the servers controller'
+        return "get test11"
+    def __haha(self, mykey):
+        print 'into the servers controller'
+        return "get haha"
 
 def create_resource():
-    return myapp.MyApplication(Controller())
-    #return wsgi.Resource(Controller())
+    return myapp.Resource(Controller())

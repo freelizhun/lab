@@ -28,14 +28,14 @@ class MyController2(object):
 	return "get __test"
 
 
-class MyApplication(object):
+class Resource(object):
     """Test application to call from router."""
 
     def __init__(self, controller):
         self._controller = controller
         
     def __call__(self, environ, start_response):
-        print("step 3: MyApplication is invoked")
+        print("step 3: Resource is invoked")
         
         action_args = environ['wsgiorg.routing_args'][1].copy()
         try:
@@ -62,7 +62,7 @@ class Router(object):
     def __init__(self):  
         # if we're only running in debug, bump routes' internal logging up a  
         # notch, as it's very spammy  
-        my_application = MyApplication(MyController()) 
+        my_application = Resource(MyController()) 
         self.mapper = Mapper() 
         route_name = "dummy_route"
         route_path = "/dummies"
@@ -72,7 +72,7 @@ class Router(object):
                             mykey="myvalue",
                             conditions={"method": ['GET']})
 
-        my_application2 = MyApplication(MyController2()) 
+        my_application2 = Resource(MyController2()) 
         self.mapper.connect("test","/test/{action}",
                 controller=my_application2,
                 mykey="myvalue",
