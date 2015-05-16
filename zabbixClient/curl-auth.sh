@@ -1,0 +1,1 @@
+curl -i -X POST -H 'Content-Type:application/json' -d'{"jsonrpc": "2.0","method":"user.authenticate","params":{"user":"Admin","password":"zabbix"},"auth": null,"id":0}' http://monitor.example.com/api_jsonrpc.php
