@@ -1,0 +1,8 @@
+doewnload by using bash download.sh
+untar all of the two packages
+put Makefile in both of two packages
+Make them all 
+and 
+dpkg -i markup-safe
+dpkg -i jinja2
+python test2.py
