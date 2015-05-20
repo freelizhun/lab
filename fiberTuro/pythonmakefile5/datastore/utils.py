@@ -31,7 +31,7 @@ import time
 import uuid
 import functools
 import weakref
-from eventlet.green import socket, threading
+#from eventlet.green import socket, threading
 from hashlib import md5, sha1
 from random import random, shuffle
 from urllib import quote as _quote
@@ -1225,7 +1225,7 @@ class LogAdapter(logging.LoggerAdapter, object):
     client ip.
     """
 
-    _cls_thread_local = threading.local()
+    #_cls_thread_local = threading.local()
 
     def __init__(self, logger, server):
         logging.LoggerAdapter.__init__(self, logger, {})
