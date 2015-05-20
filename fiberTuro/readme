@@ -1,0 +1,12 @@
+pythonmakefile3:
+   contains all the necessary stuff including code structure, config, bin
+upstart, Makefile to deb. 
+exec: dpkg -i python-xxxx --force-depends.
+force-depends shows as a warning and will not affect the result.
+
+pythonmakefile2:
+   Not contains upstart and bin. That's for lib only package.
+
+
+
+
