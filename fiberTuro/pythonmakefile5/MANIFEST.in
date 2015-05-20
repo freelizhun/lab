@@ -1,0 +1,6 @@
+include *.txt
+include *.rst
+include etc/*
+include datastore/*
+include upstart/*
+include requirements/*.txt
