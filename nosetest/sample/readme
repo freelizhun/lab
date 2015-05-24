@@ -4,8 +4,14 @@ not it's not in sequential in a class, to serialize it by using one class
 with multiple steps and insert assert below each function call.
 
 
-setup() instead of __init__
+setup() instead of __init__, but it will run every testing
+setupClass with @classmethod will run once
+
+test_0_XX test_1_XX can run sequentially.
+
 
 need to further install pacakge
 pip install nose-testconfig
+
+
 
