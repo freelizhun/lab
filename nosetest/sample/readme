@@ -9,6 +9,8 @@ setupClass with @classmethod will run once
 
 test_0_XX test_1_XX can run sequentially.
 
+__init__.py can setup/obtain as a global variable such as token
+
 
 need to further install pacakge
 pip install nose-testconfig
