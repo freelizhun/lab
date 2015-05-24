@@ -1,0 +1,11 @@
+the process is sequential in config file
+
+not it's not in sequential in a class, to serialize it by using one class
+with multiple steps and insert assert below each function call.
+
+
+setup() instead of __init__
+
+need to further install pacakge
+pip install nose-testconfig
+
