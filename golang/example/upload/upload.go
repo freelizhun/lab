@@ -67,6 +67,11 @@ func wrapHandler(h http.Handler) httprouter.Handle {
 }
 
 
+func getInfoHandler(w http.ResponseWriter, r *http.Request) {
+	
+	 w.Header().Set("Content-Type", "application/json")
+	 w.WriteHeader(200)
+}
 
 func main() {
 	commonHandlers := alice.New(loggingHandler, recoverHandler)
@@ -75,7 +80,8 @@ func main() {
 	//http.Handle("/", commonHandlers.ThenFunc(webUploadHandler))
 	//http.ListenAndServe(":8080", nil)
 	router := httprouter.New()
-        router.POST("/webUploadHandler", wrapHandler(commonHandlers.ThenFunc(webUploadHandler)))
+        router.POST("/upload", wrapHandler(commonHandlers.ThenFunc(webUploadHandler)))
+        router.GET("/version", wrapHandler(commonHandlers.ThenFunc(getInfoHandler)))
         http.ListenAndServe(":8080", router)
 
 
