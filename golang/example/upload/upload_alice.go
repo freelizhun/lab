@@ -6,8 +6,6 @@ import (
 	"os"
  	"github.com/pborman/uuid"
         "github.com/justinas/alice"
-	"github.com/julienschmidt/httprouter"
-	"github.com/gorilla/context"
 
 
 )
@@ -59,24 +57,11 @@ func recoverHandler(next http.Handler) http.Handler {
   return http.HandlerFunc(fn)
 }
 
-func wrapHandler(h http.Handler) httprouter.Handle {
-  return func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-    context.Set(r, "params", ps)
-    h.ServeHTTP(w, r)
-  }
-}
-
-
 
 func main() {
 	commonHandlers := alice.New(loggingHandler, recoverHandler)
 	//commonHandlers := alice.New(loggingHandler)
 	//http.HandleFunc("/", webUploadHandler)
-	//http.Handle("/", commonHandlers.ThenFunc(webUploadHandler))
-	//http.ListenAndServe(":8080", nil)
-	router := httprouter.New()
-        router.POST("/webUploadHandler", wrapHandler(commonHandlers.ThenFunc(webUploadHandler)))
-        http.ListenAndServe(":8080", router)
-
-
+	http.Handle("/", commonHandlers.ThenFunc(webUploadHandler))
+	http.ListenAndServe(":8080", nil)
 }
