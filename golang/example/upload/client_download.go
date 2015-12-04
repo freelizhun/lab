@@ -4,12 +4,13 @@ package main
 import (
 //	"bufio"
 //	"compress/gzip"
-	"fmt"
 //	"io"
-	"io/ioutil"
+//	"io/ioutil"
 	"log"
 	"net/http"
-        "encoding/json"
+ //       "encoding/json"
+	"io"
+	"os"
 //	"os"
 )
 
@@ -23,7 +24,7 @@ func main(){
 
 
 
-url := "http://localhost:8080/version"
+url := "http://localhost:8080/download"
 request, err := http.NewRequest("GET", url, nil)
 
 //resp, err := http.DefaultClient.Do(req)
@@ -34,15 +35,12 @@ resp, err := http.DefaultClient.Do(request)
 if err != nil {
 	log.Fatal(err)
 }
-log.Println(resp)
-      body, _ := ioutil.ReadAll(resp.Body)
-       u := map[string]interface{}{}
-       err = json.Unmarshal(body, &u)
-       if err != nil {
-              panic(err)
-       }
-	fmt.Println(u["test"])
-	fmt.Println(resp.StatusCode)
-//        bodystr := string(body);
-//        fmt.Println(bodystr)
+
+out, err := os.Create("./tmp.txt")
+defer out.Close()
+
+io.Copy(out, resp.Body)
+
+log.Println("File uploaded successfully : ")
+
 }
