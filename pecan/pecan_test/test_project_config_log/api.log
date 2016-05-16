@@ -1,0 +1,10 @@
+2016-05-17 07:04:33.388 17523 ERROR app [-] -------------------api paste file /root/pecan_test/test_project/api_paste.ini
+2016-05-17 07:04:33.555 17523 INFO werkzeug [-]  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2016-05-17 07:04:56.858 17523 ERROR test_project.controllers.v2.query [-] return query from logger
+2016-05-17 07:04:56.858 17523 INFO wsgi [-] 127.0.0.1 - - [17/May/2016:07:04:56 +0800] "GET /v2/query HTTP/1.1" 200 9 "-" "curl/7.35.0"
+2016-05-17 07:04:56.859 17523 INFO werkzeug [-] 127.0.0.1 - - [17/May/2016 07:04:56] "GET /v2/query HTTP/1.1" 200 -
+2016-05-17 07:06:58.402 17718 ERROR app [-] -------------------api paste file /root/pecan_test/test_project/api_paste.ini
+2016-05-17 07:06:58.420 17718 INFO werkzeug [-]  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2016-05-17 07:07:02.649 17718 ERROR test_project.controllers.v2.query [-] return query from logger
+2016-05-17 07:07:02.650 17718 INFO wsgi [-] 127.0.0.1 - - [17/May/2016:07:07:02 +0800] "GET /v2/query HTTP/1.1" 200 9 "-" "curl/7.35.0"
+2016-05-17 07:07:02.650 17718 INFO werkzeug [-] 127.0.0.1 - - [17/May/2016 07:07:02] "GET /v2/query HTTP/1.1" 200 -
