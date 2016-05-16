@@ -1,0 +1,14 @@
+2016-05-17 04:54:50.916 16408 INFO __main__ [-] Oslo Logging
+2016-05-17 04:54:50.916 16408 WARNING __main__ [-] Oslo Logging
+2016-05-17 04:54:50.917 16408 ERROR __main__ [-] Oslo Logging
+2016-05-17 04:54:50.918 16408 INFO __main__ [-] Oslo Logging
+2016-05-17 04:54:50.918 16408 ERROR __main__ [-] loading notification handlers from haha
+2016-05-17 04:54:50.919 16408 ERROR __main__ [-] logtocomapre
+2016-05-17 04:54:50.919 16408 ERROR runlog2 [-] Oslo logging in test2's alarm------------
+2016-05-17 04:55:25.765 16451 INFO __main__ [-] Oslo Logging
+2016-05-17 04:55:25.765 16451 WARNING __main__ [-] Oslo Logging
+2016-05-17 04:55:25.765 16451 ERROR __main__ [-] Oslo Logging
+2016-05-17 04:55:25.766 16451 INFO __main__ [-] Oslo Logging
+2016-05-17 04:55:25.766 16451 ERROR __main__ [-] loading notification handlers from haha
+2016-05-17 04:55:25.766 16451 ERROR __main__ [-] logtocomapre
+2016-05-17 04:55:25.767 16451 ERROR runlog2 [-] Oslo logging in test2's alarm------------
